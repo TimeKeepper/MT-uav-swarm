@@ -31,11 +31,12 @@ docker network connect race_net race_drone_sdk_container --ip 192.168.100.3
 check_status "docker network connect race_drone_sdk_container"
 # Run the fourth container
 #docker run -d --name race_user_sdk_container -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:rouav-challenge.tencentcloudcr.com/uav_challenge_2024/sdk:user
-docker run -d -p 8888:8888 --name race_user_sdk_container \
+docker run -it -d -p 8888:8888 --name race_user_sdk_container \
     --network race_net --ip 192.168.100.4 \
     -v /home/race_log/user_log:/home/race_log \
     -v /etc/localtime:/etc/localtime:ro \
     -v /etc/timezone:/etc/timezone:ro \
+    -v /home/wenjiu/project/uav-swarm/catkin:/root/catkin_ws \
     wenjiu_uav-challenge
 # uav-challenge.tencentcloudcr.com/uav_challenge_2024/sdk:user
 check_status "docker run race_user_sdk_container"

@@ -36,7 +36,8 @@ docker run -d -p 8888:8888 --name race_user_sdk_container \
     -v /home/race_log/user_log:/home/race_log \
     -v /etc/localtime:/etc/localtime:ro \
     -v /etc/timezone:/etc/timezone:ro \
-    uav-challenge.tencentcloudcr.com/uav_challenge_2024/sdk:user
+    wenjiu_uav-challenge
+# uav-challenge.tencentcloudcr.com/uav_challenge_2024/sdk:user
 check_status "docker run race_user_sdk_container"
 # Connect the fourth container to the network
 # #docker network connect race_net race_user_sdk_container --ip 192.168.100.4
